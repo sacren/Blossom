@@ -21,3 +21,4 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 Route::get('/page', [PageController::class, 'index'])->name('page');
+Route::get('/page/{slug}', [PageController::class, 'show'])->name('page.show');
