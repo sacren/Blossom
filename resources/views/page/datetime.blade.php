@@ -1,3 +1,7 @@
+@php
+declare(strict_types=1);
+@endphp
+
 <x-layout>
 
 <x-slot:title>
@@ -8,9 +12,9 @@ Datetime
 
 /** Date & Time */
 
-date_default_timezone_set('America/Denver'); // Set timezone first
+date_default_timezone_set('America/Denver'); // set timezone first
 
-echo date_default_timezone_get() . '<br>';
+echo date_default_timezone_get() . '<br>'; // get timezone
 
 $currentTime = time(); // Unix timestamp
 
