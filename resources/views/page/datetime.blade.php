@@ -32,6 +32,22 @@ echo date_default_timezone_get() . '<br>';
 
 echo date('m/d/Y g:ia', $currentTime) . '<br>';
 
+$timestamp = mktime(0, 0, 0, 4, 12, null);
+
+echo date('m/d/Y g:ia', $timestamp) . '<br>';
+
+$timestamp = strtotime('2021-04-12 08:00:00');
+
+echo date('m/d/Y g:ia', $timestamp) . '<br>';
+
+$timestamp = strtotime('tomorrow');
+
+echo date('m/d/Y g:ia', $timestamp) . '<br>';
+
+$timestamp = strtotime('first tuesday of may 2021');
+
+echo date('m/d/Y g:ia', $timestamp) . '<br>';
+
 @endphp
 
 </x-layout>
