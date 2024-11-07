@@ -48,6 +48,13 @@ $timestamp = strtotime('first tuesday of may 2021');
 
 echo date('m/d/Y g:ia', $timestamp) . '<br>';
 
+$date = date('m/d/Y g:ia', strtotime('second friday of may 2021'));
+
+echo '<pre>';
+print_r(date_parse($date));
+print_r(date_parse_from_format('m/d/Y g:ia', $date));
+echo '</pre>';
+
 @endphp
 
 </x-layout>
