@@ -41,8 +41,8 @@ prettyPrint($a5);
 prettyPrint($a6);
 prettyPrint(array_values($a6)); // reindex array
 
-$a7 = [ null, 1, 2, 3, 4, 5, false, [], 6, 7, 8, 9, 10, ];
-$a8 = array_filter($a7); // filter out null, false, empty arrays
+$a7 = [ null, 1, 2, 0.0, '0', 5, false, [], 8, 0, ];
+$a8 = array_filter($a7); // filter out false values by default
 
 prettyPrint($a7);
 prettyPrint($a8);
