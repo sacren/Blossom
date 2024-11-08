@@ -47,6 +47,16 @@ $a8 = array_filter($a7); // filter out false values by default
 prettyPrint($a7);
 prettyPrint($a8);
 
+$a9 = [ 'a' => 1, 'b' => 2, 'c' => 3, 'd' => 4, 'e' => '1', ];
+$a10 = array_keys($a9);
+$a11 = array_keys($a9, 1);
+$a12 = array_keys($a9, 1, true); // strict comparison
+
+prettyPrint($a9);
+prettyPrint($a10);
+prettyPrint($a11);
+prettyPrint($a12);
+
 @endphp
 
 </x-layout>
