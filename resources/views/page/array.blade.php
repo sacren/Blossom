@@ -57,6 +57,36 @@ prettyPrint($a10);
 prettyPrint($a11);
 prettyPrint($a12);
 
+$a13 = [ 1, 2, 3, ];
+// callback takes array value for argument
+// index retained
+$a14 = array_map(fn($value) => $value + 2, $a13);
+
+prettyPrint($a13);
+prettyPrint($a14);
+
+$a15 = [ 'a' => 1, 'b' => 2, 'c' => 3, ];
+$a16 = [ 'd' => 4, 'e' => 5, 'f' => 6, ];
+$a17 = array_map(fn($value) => $value + 2, $a15); // index retained
+// callback takes two array values for arguments
+// new index
+$a18 = array_map(fn($v1, $v2) => $v1 + $v2, $a15, $a16);
+
+prettyPrint($a15);
+prettyPrint($a16);
+prettyPrint($a17);
+prettyPrint($a18);
+
+// not aligned with $a16, 0 will be added
+$a19 = [ 'a' => 1, 'b' => 2, ];
+$a20 = array_map(fn($v1, $v2) => $v1 + $v2, $a19, $a16);
+
+prettyPrint($a20);
+
+$a21 = array_map(null, $a15, $a16); // build new array
+
+prettyPrint($a21);
+
 @endphp
 
 </x-layout>
