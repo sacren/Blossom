@@ -29,6 +29,15 @@ echo '<br>';
 var_dump(is_dir($dir[1])); // bool true
 echo '<br>';
 
+$helperFile = resource_path('views/page/helper.blade.php');
+
+if (file_exists($helperFile)) {
+    clearstatcache();
+    echo filesize($helperFile);
+} else {
+    echo 'File not found';
+}
+
 @endphp
 
 </x-layout>
