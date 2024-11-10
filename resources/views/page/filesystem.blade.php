@@ -29,14 +29,23 @@ echo '<br>';
 var_dump(is_dir($dir[1])); // bool true
 echo '<br>';
 
-$helperFile = resource_path('views/page/helper.blade.php');
+$filename = resource_path('css/app.css');
 
-if (file_exists($helperFile)) {
+if (file_exists($filename)) {
     clearstatcache();
-    echo filesize($helperFile);
+    echo filesize($filename) . '<br>';
 } else {
     echo 'File not found';
+    return;
 }
+
+$filepointer = fopen($filename, 'r');
+
+while (($line = fgets($filepointer)) !== false) {
+    echo $line . '<br>';
+}
+
+fclose($filepointer);
 
 @endphp
 
