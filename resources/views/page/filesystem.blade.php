@@ -45,6 +45,13 @@ while (($line = fgets($filepointer)) !== false) {
     echo $line . '<br>';
 }
 
+rewind($filepointer);
+
+while (($line = fgetcsv($filepointer)) !== false) {
+    print_r($line);
+    echo '<br>';
+}
+
 fclose($filepointer);
 
 @endphp
