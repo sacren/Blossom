@@ -7,11 +7,11 @@ function getTransactionFiles(string $path): array
     $files = [];
 
     foreach (scandir($path) as $file) {
-        if (is_dir($file)) {
-            continue;
-        }
+        $file = $path . DIRECTORY_SEPARATOR . $file;
 
-        $files[] = $file;
+        if (is_file($file)) {
+            $files[] = $file;
+        }
     }
 
     return $files;

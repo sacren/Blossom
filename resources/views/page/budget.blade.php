@@ -14,8 +14,8 @@ Budget|Expenses
 
 $root = base_path('resources/views/page') . DIRECTORY_SEPARATOR;
 
-define('APP_PATH', $root . 'app' . DIRECTORY_SEPARATOR);
-define('FILES_PATH', $root . 'transactions' . DIRECTORY_SEPARATOR);
+define('APP_PATH', $root . 'app');
+define('FILES_PATH', $root . 'transactions');
 define('VIEWS_PATH', $root);
 
 @endphp
