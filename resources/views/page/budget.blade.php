@@ -20,4 +20,6 @@ define('VIEWS_PATH', $root);
 
 @endphp
 
+<x-tranx-table></x-tranx-table>
+
 </x-transactions>
