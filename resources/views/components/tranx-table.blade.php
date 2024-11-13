@@ -8,7 +8,14 @@
     </tr>
   </thead>
   <tbody>
-    @{{ php }}
+    @foreach ($transactions as $transaction)
+    <tr>
+      <td>{{ $transaction[0] }}</td>
+      <td>{{ $transaction[1] }}</td>
+      <td>{{ $transaction[2] }}</td>
+      <td>{{ $transaction[3] }}</td>
+    </tr>
+    @endforeach
   </tbody>
   <tfoot>
     <tr>
