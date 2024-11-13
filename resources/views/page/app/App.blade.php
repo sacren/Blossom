@@ -2,6 +2,13 @@
 
 declare(strict_types=1);
 
+/**
+ * Build array of files with given path
+ *
+ * @param string $path
+ *
+ * @return array of files
+ */
 function getTransactionFiles(string $path): array
 {
     $files = [];
