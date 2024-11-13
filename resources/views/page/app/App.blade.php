@@ -63,16 +63,10 @@ function getTransactions(string $fileName): array
  */
 function parseEachTranx(array $eachTranx): array
 {
-    [ $date, $checkNumber, $description, $amount ] = $eachTranx; // destructuring assignment
+    $columns = ['date', 'checkNumber', 'description', 'amount'];
+    $eachTranx[3] = floatval(str_replace(['$', ','], '', $eachTranx[3]));
 
-    $amount = floatval(str_replace(['$', ','], '', $amount));
-
-    return [
-        'date' => $date,
-        'checkNumber' => $checkNumber,
-        'description' => $description,
-        'amount' => $amount,
-    ];
+    return array_combine($columns, $eachTranx);
 }
 
 @endphp
