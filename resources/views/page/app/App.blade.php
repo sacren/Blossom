@@ -46,12 +46,33 @@ function getTransactions(string $fileName): array
             continue;
         }
 
-        $transactions[] = $transaction;
+        $transactions[] = parseEachTranx($transaction);
     }
 
     fclose($filepointer);
 
     return $transactions;
+}
+
+/**
+ * Parse each transaction
+ *
+ * @param array of individual transaction
+ *
+ * @return array
+ */
+function parseEachTranx(array $eachTranx): array
+{
+    [ $date, $checkNumber, $description, $amount ] = $eachTranx; // destructuring assignment
+
+    $amount = floatval(str_replace(['$', ','], '', $amount));
+
+    return [
+        'date' => $date,
+        'checkNumber' => $checkNumber,
+        'description' => $description,
+        'amount' => $amount,
+    ];
 }
 
 @endphp

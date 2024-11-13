@@ -10,10 +10,10 @@
   <tbody>
     @foreach ($transactions as $transaction)
     <tr>
-      <td>{{ $transaction[0] }}</td>
-      <td>{{ $transaction[1] }}</td>
-      <td>{{ $transaction[2] }}</td>
-      <td>{{ $transaction[3] }}</td>
+      <td>{{ $transaction['date'] }}</td>
+      <td>{{ $transaction['checkNumber'] }}</td>
+      <td>{{ $transaction['description'] }}</td>
+      <td>{{ $transaction['amount'] }}</td>
     </tr>
     @endforeach
   </tbody>
