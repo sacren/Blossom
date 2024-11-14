@@ -14,6 +14,18 @@ function addDollarSign(float $amount): string
     return ($amount < 0 ? '-' : null) . '$' . number_format(abs($amount), 2);
 }
 
+/**
+ * Format date to month day, year
+ *
+ * @param string $date
+ *
+ * @return string
+ */
+function formatDate(string $date): string
+{
+    return date('M j, Y', strtotime($date));
+}
+
 @endphp
 
 <table>
@@ -28,7 +40,7 @@ function addDollarSign(float $amount): string
   <tbody>
     @foreach ($transactions as $transaction)
     <tr>
-      <td>{{ $transaction['date'] }}</td>
+      <td>{{ formatDate($transaction['date']) }}</td>
       <td>{{ $transaction['checkNumber'] }}</td>
       <td>{{ $transaction['description'] }}</td>
       <td>{{ addDollarSign($transaction['amount']) }}</td>
