@@ -1,3 +1,21 @@
+@php
+
+declare(strict_types=1);
+
+/**
+ * Add the dollar sign to the amount
+ *
+ * @param float $amount
+ *
+ * @return string of dollar amount
+ */
+function addDollarSign(float $amount): string
+{
+    return ($amount < 0 ? '-' : null) . '$' . number_format(abs($amount), 2);
+}
+
+@endphp
+
 <table>
   <thead>
     <tr>
@@ -13,22 +31,22 @@
       <td>{{ $transaction['date'] }}</td>
       <td>{{ $transaction['checkNumber'] }}</td>
       <td>{{ $transaction['description'] }}</td>
-      <td>{{ $transaction['amount'] }}</td>
+      <td>{{ addDollarSign($transaction['amount']) }}</td>
     </tr>
     @endforeach
   </tbody>
   <tfoot>
     <tr>
       <th colspan="3">Total Income:</th>
-      <td>{{ $total['income'] ?? 0 }}</td>
+      <td>{{ addDollarSign($total['income'] ?? 0) }}</td>
     </tr>
     <tr>
       <th colspan="3">Total Expense:</th>
-      <td>{{ $total['expense'] ?? 0 }}</td>
+      <td>{{ addDollarSign($total['expense'] ?? 0) }}</td>
     </tr>
     <tr>
       <th colspan="3">Net Total:</th>
-      <td>{{ $total['balance'] ?? 0 }}</td>
+      <td>{{ addDollarSign($total['balance'] ?? 0) }}</td>
     </tr>
   </tfoot>
 </table>
