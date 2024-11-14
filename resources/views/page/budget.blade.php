@@ -23,7 +23,7 @@ $files = getTransactionFiles(FILES_PATH);
 $transactions = [];
 
 foreach ($files as $file) {
-    $transactions = array_merge($transactions, getTransactions($file));
+    $transactions = array_merge($transactions, getTransactions($file, 'parseEachTranx'));
 }
 
 @endphp

@@ -31,7 +31,7 @@ function getTransactionFiles(string $path): array
  *
  * @return array
  */
-function getTransactions(string $fileName): array
+function getTransactions(string $fileName, ?callable $tranxHandler = null): array
 {
     if (!file_exists($fileName)) {
         trigger_error('File not found: ' . $fileName, E_USER_ERROR);
@@ -46,7 +46,11 @@ function getTransactions(string $fileName): array
             continue;
         }
 
-        $transactions[] = parseEachTranx($transaction);
+        if ($tranxHandler) {
+            $transaction = $tranxHandler($transaction);
+        }
+
+        $transactions[] = $transaction;
     }
 
     fclose($filepointer);
