@@ -26,8 +26,10 @@ foreach ($files as $file) {
     $transactions = array_merge($transactions, getTransactions($file, 'parseEachTranx'));
 }
 
+$total = getTotal($transactions);
+
 @endphp
 
-<x-tranx-table :transactions="$transactions"></x-tranx-table>
+<x-tranx-table :total="$total" :transactions="$transactions"></x-tranx-table>
 
 </x-transactions>

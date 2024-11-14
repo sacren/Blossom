@@ -20,15 +20,15 @@
   <tfoot>
     <tr>
       <th colspan="3">Total Income:</th>
-      <td>@{{ php }}</td>
+      <td>{{ $total['income'] ?? 0 }}</td>
     </tr>
     <tr>
       <th colspan="3">Total Expense:</th>
-      <td>@{{ php }}</td>
+      <td>{{ $total['expense'] ?? 0 }}</td>
     </tr>
     <tr>
       <th colspan="3">Net Total:</th>
-      <td>@{{ php }}</td>
+      <td>{{ $total['balance'] ?? 0 }}</td>
     </tr>
   </tfoot>
 </table>

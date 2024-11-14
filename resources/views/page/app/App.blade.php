@@ -73,4 +73,31 @@ function parseEachTranx(array $eachTranx): array
     return array_combine($columns, $eachTranx);
 }
 
+/**
+ * Get total income, expense and balance
+ *
+ * @param array $transactions
+ *
+ * @return array of total
+ */
+function getTotal(array $transactions): array
+{
+    $total = [
+        'income' => 0,
+        'expense' => 0,
+    ];
+
+    foreach ($transactions as $transaction) {
+        if ($transaction['amount'] >= 0) {
+            $total['income'] += $transaction['amount'];
+        } else {
+            $total['expense'] += $transaction['amount'];
+        }
+    }
+
+    $total['balance'] = $total['income'] + $total['expense'];
+
+    return $total;
+}
+
 @endphp
