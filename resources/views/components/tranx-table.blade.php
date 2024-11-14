@@ -43,7 +43,13 @@ function formatDate(string $date): string
       <td>{{ formatDate($transaction['date']) }}</td>
       <td>{{ $transaction['checkNumber'] }}</td>
       <td>{{ $transaction['description'] }}</td>
-      <td>{{ addDollarSign($transaction['amount']) }}</td>
+      <td>
+        @if ($transaction['amount'] >= 0)
+        <span class="text-green-600">{{ addDollarSign($transaction['amount']) }}</span>
+        @else
+        <span class="text-red-500">{{ addDollarSign($transaction['amount']) }}</span>
+        @endif
+      </td>
     </tr>
     @endforeach
   </tbody>
