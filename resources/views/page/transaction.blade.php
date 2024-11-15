@@ -12,10 +12,16 @@ Transaction
 
 @php
 
-$transaction = new Transaction();
+$transaction = new Transaction(100, 'Transaction 1');
 
-// object(App\Blossom\Transaction)#298 (0) { ["amount"]=> uninitialized(float) ["description"]=> uninitialized(string) }
+// object(App\Blossom\Transaction)#298 (0) { ["amount"]=> float(100) ["description"]=> string(13) "Transaction 1" }
 var_dump($transaction);
+echo '<br>';
+
+var_dump($transaction->amount); // float(100)
+echo '<br>';
+
+var_dump($transaction->description); // string(13) "Transaction 1"
 echo '<br>';
 
 @endphp
