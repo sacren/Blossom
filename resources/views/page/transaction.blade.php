@@ -18,10 +18,10 @@ $transaction = new Transaction(100, 'Transaction 1');
 var_dump($transaction);
 echo '<br>';
 
-var_dump($transaction->amount); // float(100)
+var_dump($transaction->getAmount()); // float(100)
 echo '<br>';
 
-var_dump($transaction->description); // string(13) "Transaction 1"
+var_dump($transaction->getDescription()); // string(13) "Transaction 1"
 echo '<br>';
 
 @endphp

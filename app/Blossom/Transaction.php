@@ -5,8 +5,8 @@ namespace App\Blossom;
 
 class Transaction
 {
-    public float $amount;
-    public string $description;
+    private float $amount;
+    private string $description;
 
     /**
      * Transaction constructor.
@@ -18,5 +18,25 @@ class Transaction
     {
         $this->amount = $amount;
         $this->description = $description;
+    }
+
+    /**
+     * Get the amount
+     *
+     * @return float
+     */
+    public function getAmount(): float
+    {
+        return $this->amount;
+    }
+
+    /**
+     * Get the description
+     *
+     * @return string
+     */
+    public function getDescription(): string
+    {
+        return $this->description;
     }
 }
