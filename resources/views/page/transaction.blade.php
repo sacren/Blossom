@@ -14,14 +14,8 @@ Transaction
 
 $transaction = new Transaction();
 
-// object(App\Blossom\Transaction)#298 (2) { ["amount"]=> NULL ["description"]=> NULL }
+// object(App\Blossom\Transaction)#298 (0) { ["amount"]=> uninitialized(float) ["description"]=> uninitialized(string) }
 var_dump($transaction);
-echo '<br>';
-
-var_dump($transaction->amount); // null
-echo '<br>';
-
-var_dump($transaction->description); // null
 echo '<br>';
 
 @endphp

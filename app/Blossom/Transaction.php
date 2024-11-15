@@ -5,6 +5,6 @@ namespace App\Blossom;
 
 class Transaction
 {
-    public $amount;
-    public $description;
+    public float $amount;
+    public string $description;
 }
