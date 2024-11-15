@@ -18,8 +18,7 @@ $transaction = new Transaction(100, 'Transaction 1');
 var_dump($transaction);
 echo '<br>';
 
-$transaction->addTax(8.25);
-$transaction->applyDiscount(10);
+$transaction->addTax(8.25)->applyDiscount(10);
 
 var_dump(number_format($transaction->getAmount(), 2)); // string(5) "97.43"
 echo '<br>';
