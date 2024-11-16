@@ -21,6 +21,14 @@ class Transaction
     }
 
     /**
+     * Transaction destructor
+     */
+    public function __destruct()
+    {
+        echo 'Destruct: ' . $this->description . '<br>';
+    }
+
+    /**
      * Get the amount
      *
      * @return float
