@@ -12,12 +12,15 @@ Transaction
 
 @php
 
-$amount = (new Transaction(100, 'Transaction 1'))
+$tranx1 = (new Transaction(100, 'Transaction 1'))
    ->addTax(8.25)
-   ->applyDiscount(10)
-   ->getAmount();
+   ->applyDiscount(10);
 
-var_dump(number_format($amount, 2)); // string(5) "97.43"
+$tranx2 = (new Transaction(200, 'Transaction 2'))
+   ->addTax(7.5)
+   ->applyDiscount(15);
+
+var_dump(number_format($tranx1->getAmount(), 2), number_format($tranx2->getAmount(), 2));
 echo '<br>';
 
 @endphp
