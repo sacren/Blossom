@@ -12,11 +12,12 @@ Transaction
 
 @php
 
-$tranx = (new Transaction(100, 'Transaction 1'))
+$amount = (new Transaction(100, 'Transaction 1'))
    ->addTax(8.25)
-   ->applyDiscount(10);
+   ->applyDiscount(10)
+   ->getAmount();
 
-var_dump(number_format($tranx->getAmount(), 2));
+var_dump(number_format($amount, 2));
 echo '<br>';
 
 @endphp
