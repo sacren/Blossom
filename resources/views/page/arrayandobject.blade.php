@@ -49,6 +49,7 @@ echo '<br>';
 var_dump($name->last); // string(3) "Doe"
 echo '<br>';
 
+// array object
 $numbers = (object) [5, 6, 7];
 
 var_dump($numbers); // object(stdClass)#297 (3) { ["0"]=> int(5) ["1"]=> int(6) ["2"]=> int(7) }
@@ -61,6 +62,48 @@ var_dump($numbers->{1}); // int(6)
 echo '<br>';
 
 var_dump($numbers->{2}); // int(7)
+echo '<br>';
+
+// integer object
+$six = (object) 6;
+
+var_dump($six); // object(stdClass)#295 (1) { ["scalar"]=> int(6) }
+echo '<br>';
+
+var_dump($six->scalar); // int(6)
+echo '<br>';
+
+// float object
+$floatObj = (object) 6.7;
+
+var_dump($floatObj); // object(stdClass)#300 (1) { ["scalar"]=> float(6.7) }
+echo '<br>';
+
+var_dump($floatObj->scalar); // float(6.7)
+echo '<br>';
+
+// boolean object
+$boolObj = (object) true;
+
+var_dump($boolObj); // object(stdClass)#296 (1) { ["scalar"]=> bool(true) }
+echo '<br>';
+
+var_dump($boolObj->scalar); // bool(true)
+echo '<br>';
+
+// null object
+$emptyObj = (object) null;
+
+var_dump($emptyObj); // object(stdClass)#302 (0) { }
+echo '<br>';
+
+// string object
+$stringObj = (object) 'Hello, World!';
+
+var_dump($stringObj); // object(stdClass)#301 (1) { ["scalar"]=> string(6) "string" }
+echo '<br>';
+
+var_dump($stringObj->scalar); // string(6) "string"
 echo '<br>';
 
 @endphp
