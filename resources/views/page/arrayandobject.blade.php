@@ -36,6 +36,13 @@ echo '<br>';
 var_dump($obj->c); // int(3)
 echo '<br>';
 
+$name = new stdClass();
+$name->first = 'John';
+$name->last = 'Doe';
+
+var_dump($name);
+echo '<br>';
+
 @endphp
 
 </x-layout>
