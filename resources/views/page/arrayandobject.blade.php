@@ -40,7 +40,27 @@ $name = new stdClass();
 $name->first = 'John';
 $name->last = 'Doe';
 
-var_dump($name);
+var_dump($name); // object(stdClass)#298 (2) { ["first"]=> string(4) "John" ["last"]=> string(3) "Doe" }
+echo '<br>';
+
+var_dump($name->first); // string(4) "John"
+echo '<br>';
+
+var_dump($name->last); // string(3) "Doe"
+echo '<br>';
+
+$numbers = (object) [5, 6, 7];
+
+var_dump($numbers); // object(stdClass)#297 (3) { ["0"]=> int(5) ["1"]=> int(6) ["2"]=> int(7) }
+echo '<br>';
+
+var_dump($numbers->{0}); // int(5)
+echo '<br>';
+
+var_dump($numbers->{1}); // int(6)
+echo '<br>';
+
+var_dump($numbers->{2}); // int(7)
 echo '<br>';
 
 @endphp
