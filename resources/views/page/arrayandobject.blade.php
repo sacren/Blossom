@@ -106,6 +106,34 @@ echo '<br>';
 var_dump($stringObj->scalar); // string(6) "string"
 echo '<br>';
 
+$str = new ArrayAndObject('{"a":5,"b":6,"c":7}');
+
+$arr = $str->toArray();
+var_dump($arr);
+echo '<br>';
+
+var_dump($arr['a']); // int(1)
+echo '<br>';
+
+var_dump($arr['b']); // int(2)
+echo '<br>';
+
+var_dump($arr['c']); // int(3)
+echo '<br>';
+
+$obj = $str->toObject();
+var_dump($obj);
+echo '<br>';
+
+var_dump($obj->a); // int(1)
+echo '<br>';
+
+var_dump($obj->b); // int(2)
+echo '<br>';
+
+var_dump($obj->c); // int(3)
+echo '<br>';
+
 @endphp
 
 </x-layout>

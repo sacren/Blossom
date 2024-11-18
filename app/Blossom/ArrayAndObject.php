@@ -6,15 +6,12 @@ namespace App\Blossom;
 
 class ArrayAndObject
 {
-    private string $str;
-
     /**
      * Create a new class instance.
      */
-    public function __construct()
-    {
-        $this->str = '{"a":1,"b":2,"c":3}';
-    }
+    public function __construct(
+        private string $str = '{"a":1,"b":2,"c":3}'
+    ) { }
 
     /**
      * Convert string to array.
