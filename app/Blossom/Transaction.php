@@ -5,18 +5,18 @@ namespace App\Blossom;
 
 class Transaction
 {
-    private float $amount;
     private string $description;
 
     /**
      * Transaction constructor.
      *
-     * @param float $amount
+     * @param private float $amount
      * @param string $description
      */
-    public function __construct(float $amount, string $description)
-    {
-        $this->amount = $amount;
+    public function __construct(
+        private float $amount, // amount property promoted
+        string $description
+    ) {
         $this->description = $description;
     }
 
