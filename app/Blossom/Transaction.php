@@ -5,8 +5,6 @@ namespace App\Blossom;
 
 class Transaction
 {
-    private string $description;
-
     /**
      * Transaction constructor.
      *
@@ -15,10 +13,8 @@ class Transaction
      */
     public function __construct(
         private float $amount, // amount property promoted
-        string $description
-    ) {
-        $this->description = $description;
-    }
+        private ?string $description = null // promote description with default null
+    ) { }
 
     /**
      * Transaction destructor
