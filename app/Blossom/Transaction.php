@@ -1,7 +1,10 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Blossom;
+
+use App\Blossom\Customer;
 
 class Transaction
 {
@@ -13,7 +16,8 @@ class Transaction
      */
     public function __construct(
         private float $amount, // amount property promoted
-        private ?string $description = null // promote description with default null
+        private ?string $description = null, // promote description with default null
+        public ?Customer $customer = null,
     ) { }
 
     /**
