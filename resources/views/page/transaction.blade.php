@@ -20,7 +20,7 @@ $tranx = (new Transaction(100, 'Transaction 1'))
 var_dump(number_format($tranx->getAmount(), 2));
 echo '<br>';
 
-var_dump($tranx->getCustomer()?->getPaymentProfile()?->id);
+var_dump($tranx->getCustomer()?->getPaymentProfile()?->id ?? 'N/A');
 echo '<br>';
 
 @endphp
