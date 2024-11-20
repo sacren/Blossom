@@ -12,6 +12,16 @@ class Customer
      * @param public PaymentProfile|null $paymentProfile
      */
     public function __construct(
-        public ?PaymentProfile $paymentProfile = null,
+        private ?PaymentProfile $paymentProfile = null,
     ) { }
+
+    /**
+     * Get payment profile
+     *
+     * @return PaymentProfile|null
+     */
+    public function getPaymentProfile(): ?PaymentProfile
+    {
+        return $this->paymentProfile;
+    }
 }

@@ -17,7 +17,7 @@ class Transaction
     public function __construct(
         private float $amount, // amount property promoted
         private ?string $description = null, // promote description with default null
-        public ?Customer $customer = null,
+        private ?Customer $customer = null,
     ) { }
 
     /**
@@ -46,6 +46,16 @@ class Transaction
     public function getDescription(): string
     {
         return $this->description;
+    }
+
+    /**
+     * Get the customer
+     *
+     * @return Customer|null
+     */
+    public function getCustomer(): ?Customer
+    {
+        return $this->customer;
     }
 
     /**
