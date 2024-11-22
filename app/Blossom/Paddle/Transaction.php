@@ -14,5 +14,7 @@ class Transaction
         // object(App\Blossom\Paddle\CustomerProfile)#297 (0) { }
         var_dump(new CustomerProfile());
         echo '<br>';
+        var_dump(new \DateTime());
+        echo '<br>';
     }
 }
