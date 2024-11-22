@@ -6,7 +6,7 @@ declare(strict_types=1);
 @use('App\Blossom\Customer')
 @use('App\Blossom\Paddle\Transaction as PaddleTransaction')
 
-<x-layout>
+<x-guest-layout>
 
 <x-slot:title>
 Transaction
@@ -30,4 +30,4 @@ echo '<br>';
 
 @endphp
 
-</x-layout>
+</x-guest-layout>
