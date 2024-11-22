@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 @use('App\Blossom\Transaction')
 @use('App\Blossom\Customer')
+@use('App\Blossom\Paddle\Transaction as PaddleTransaction')
 
 <x-layout>
 
@@ -21,6 +22,10 @@ var_dump(number_format($tranx->getAmount(), 2));
 echo '<br>';
 
 var_dump($tranx->getCustomer()?->getPaymentProfile()?->id ?? 'N/A');
+echo '<br>';
+
+// object(App\Blossom\Paddle\Transaction)#298 (0) { }
+var_dump(new PaddleTransaction());
 echo '<br>';
 
 @endphp

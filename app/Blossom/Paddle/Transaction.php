@@ -11,6 +11,8 @@ class Transaction
      */
     public function __construct()
     {
-        //
+        // object(App\Blossom\Paddle\CustomerProfile)#297 (0) { }
+        var_dump(new CustomerProfile());
+        echo '<br>';
     }
 }
