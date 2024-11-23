@@ -18,8 +18,19 @@ class Transaction
         echo '<br>';
         var_dump(new DateTime());
         echo '<br>';
-        // array(2) { [0]=> string(2) "Hi" [1]=> string(8) " Paddle!" }
-        var_dump(explode(',', 'Hi, Paddle!'));
+        var_dump(explode(',', 'Hi, Paddle!')); // string(8) "Exploded"
         echo '<br>';
     }
+}
+
+/**
+ * Function in local namespace.
+ *
+ * @param string $delimiter
+ * @param string $string
+ * @return string
+ */
+function explode(string $delimiter, string $string): string
+{
+    return 'Exploded';
 }
