@@ -18,7 +18,8 @@ class Transaction
         echo '<br>';
         var_dump(new DateTime());
         echo '<br>';
-        var_dump(explode(',', 'Hi, Paddle!')); // string(8) "Exploded"
+        // array(2) { [0]=> string(2) "Hi" [1]=> string(8) " Paddle!" }
+        var_dump(\explode(',', 'Hi, Paddle!'));
         echo '<br>';
     }
 }
