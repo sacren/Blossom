@@ -12,9 +12,12 @@ class TransactionController extends Controller
      */
     public function index()
     {
-        return view('transaction.index', [
-            'transaction' => Transaction::class,
-            'paddleTransaction' => PaddleTransaction::class,
-        ]);
+        $transaction = Transaction::class;
+        $paddleTransaction = PaddleTransaction::class;
+
+        return view(
+            view: 'transaction.index',
+            data: compact('transaction', 'paddleTransaction')
+        );
     }
 }
