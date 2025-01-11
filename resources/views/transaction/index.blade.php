@@ -19,6 +19,8 @@
         // object(App\Blossom\Paddle\Transaction)#298 (0) { }
         var_dump(new $paddleTransaction());
         echo '<br>';
+
+        unset($transact); // Destruct: Test transaction
     @endphp
 
 </x-app-layout>
