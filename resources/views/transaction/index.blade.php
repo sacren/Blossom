@@ -20,7 +20,7 @@
         var_dump(new $paddleTransaction());
         echo '<br>';
 
-        unset($transact); // Destruct: Test transaction
+        $transact = null; // Destruct: Test transaction
     @endphp
 
 </x-app-layout>
