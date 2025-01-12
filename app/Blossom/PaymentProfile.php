@@ -7,10 +7,10 @@ class PaymentProfile
     /**
      * PaymentProfile constructor.
      *
-     * @property int $id The unique identifier for the payment profile
+     * @property $id The unique identifier for the payment profile
      */
     public function __construct(
-        public int $id = 0,
+        public $id = null,
     ) {
         $this->id = rand();
     }
