@@ -18,7 +18,18 @@ class Transaction
         private float $amount, // amount property promoted
         private ?string $description = null, // promote description with default null
         private ?Customer $customer = null,
-    ) { }
+    ) {
+        echo 'Construct: ' . $description . '<br>'; // Test Transaction
+        echo 'Construct: ' . $this->description . '<br>'; // Test Transaction
+
+        $description = 'First Transaction';
+        echo 'Construct: ' . $description . '<br>'; // First Transaction
+        echo 'Construct: ' . $this->description . '<br>'; // Test Transaction
+
+        $this->description = 'Last Transaction';
+        echo 'Construct: ' . $description . '<br>'; // First Transaction
+        echo 'Construct: ' . $this->description . '<br>'; // Last Transaction
+    }
 
     /**
      * Transaction destructor
