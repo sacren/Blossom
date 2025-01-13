@@ -4,7 +4,9 @@
     </x-slot:header>
 
     @php
-        $transaction = new $transaction(amount: 100.0, description: 'Test transaction');
+        $paymentProfile = new $paymentProfile();
+        $customer = new $customer($paymentProfile);
+        $transaction = new $transaction(amount: 100.0, description: 'Test transaction', customer: $customer);
         $transaction->addTax(8.25)->applyDiscount(10);
 
         var_dump(number_format($transaction->getAmount(), 2));
