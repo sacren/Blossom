@@ -9,13 +9,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('transaction', [TransactionController::class, 'index'])
-    ->middleware(['auth', 'verified'])
-    ->name('transaction');
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('transaction', [TransactionController::class, 'index'])->name('transaction');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+    Route::get('page', [PageController::class, 'index'])->name('page');
+    Route::get('page/{slug}', [PageController::class, 'show'])->name('page.show');
+
+    Route::get('dashboard', fn () => view('dashboard'))->name('dashboard');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -25,10 +26,4 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('/page', [PageController::class, 'index'])
-    ->middleware(['auth', 'verified'])
-    ->name('page');
-
-Route::get('/page/{slug}', [PageController::class, 'show'])
-    ->middleware(['auth', 'verified'])
-    ->name('page.show');
+Route::fallback(fn () => abort(404));
