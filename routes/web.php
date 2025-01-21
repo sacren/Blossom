@@ -13,7 +13,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('transaction', [TransactionController::class, 'index'])->name('transaction');
 
     Route::get('page', [PageController::class, 'index'])->name('page');
-    Route::get('page/{slug}', [PageController::class, 'show'])->name('page.show');
+    Route::get('page/{slug}', [PageController::class, 'show'])
+        ->middleware('check.page.view')
+        ->name('page.show');
 
     Route::get('dashboard', fn () => view('dashboard'))->name('dashboard');
 });

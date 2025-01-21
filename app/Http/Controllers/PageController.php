@@ -25,10 +25,6 @@ class PageController extends Controller
     {
         $view = 'page.'.$name;
 
-        if (!View::exists($view)) {
-            abort(404);
-        }
-
-        return View::make($view);
+        return view($view);
     }
 }
