@@ -13,10 +13,10 @@ class CheckPageViewExists
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next): Response
+    public function handle(Request $request, Closure $next, string $pageParam = 'slug'): Response
     {
-        $name = $request->route()->parameters();
-        $view = 'page.' . reset($name);
+        $name = $request->route($pageParam);
+        $view = 'page.' . $name;
 
         if (!view()->exists($view)) {
             abort(404);
