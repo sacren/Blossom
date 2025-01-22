@@ -15,8 +15,8 @@ class CheckPageViewExists
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $name = $request->route('slug');
-        $view = 'page.' . $name;
+        $name = $request->route()->parameters();
+        $view = 'page.' . reset($name);
 
         if (!view()->exists($view)) {
             abort(404);
